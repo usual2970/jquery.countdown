@@ -13,6 +13,7 @@ Blog：http://t.qq.com/usual2970
 	$.countdown.init=function(opts){
 		
 		var target=Date.parse(opts.target_time);
+		$("#"+opts.id).data("opts",opts);
 		left_time(target,opts);
 	}
 
@@ -52,7 +53,8 @@ Blog：http://t.qq.com/usual2970
 	}
 
 	$.countdown.start=function(id){
-		
+		var opts=$(id).data("opts");
+		left_time(Date.parse(opts.target_time),opts);
 	}
 
 	$.countdown.defaults={

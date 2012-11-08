@@ -19,9 +19,14 @@
 				});
 
 
-				$("#countdown").click(function(){
+				$("#countdown").hover(function(){
 					$.countdown.stop(this);
-				});
+				},
+				function(){
+					$.countdown.start(this);
+				}
+
+				);
 			});
 		</script>
 	</body>
